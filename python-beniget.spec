@@ -1,6 +1,6 @@
 Summary:	Extract semantic information about static Python code
 Name:		python-beniget
-Version:	0.4.1
+Version:	0.4.2.post1
 Release:	1
 Group:		Development/Python
 License:	BSD
