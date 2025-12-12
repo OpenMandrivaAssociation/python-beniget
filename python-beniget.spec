@@ -1,7 +1,7 @@
 Summary:	Extract semantic information about static Python code
 Name:		python-beniget
 Version:	0.4.2.post1
-Release:	1
+Release:	2
 Group:		Development/Python
 License:	BSD
 URL:		https://github.com/serge-sans-paille/beniget/
