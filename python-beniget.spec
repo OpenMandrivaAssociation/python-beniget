@@ -1,18 +1,20 @@
-Summary:	Extract semantic information about static Python code
+%define module beniget
+
 Name:		python-beniget
-Version:	0.4.2.post1
-Release:	2
+Version:	0.5.0
+Release:	1
+Summary:	Extract semantic information about static Python code
 Group:		Development/Python
 License:	BSD
 URL:		https://github.com/serge-sans-paille/beniget/
-#Source0:	https://github.com/serge-sans-paille/beniget/archive/%{version}/beniget-%{version}.tar.gz
-Source0:	https://pypi.io/packages/source/b/beniget/beniget-%{version}.tar.gz
-BuildRequires:	pkgconfig(python)
-BuildRequires:	python3dist(pip)
-BuildRequires:	python3dist(setuptools)
-BuildRequires:	python3dist(wheel)
-
+Source0:	https://github.com/serge-sans-paille/beniget/archive/%{version}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+BuildSystem:	python
 BuildArch:	noarch
+
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 Beniget is a static analyzer for Python2 and Python3 code.
@@ -22,19 +24,7 @@ definitions inside Python Module/Class/Function. It can also compute
 def-use chains from each definition.
 
 %files
-%license LICENSE
 %doc README.rst
-%{py_sitedir}/beniget
-%{py_sitedir}/beniget-*.*-info
-
-#--------------------------------------------------------------------
-
-%prep
-%autosetup -n beniget-%{version}
-
-%build
-%py_build
- 
-%install
-%py_install
-
+%license LICENSE
+%{python_sitelib}/%{module}
+%{python_sitelib}/%{module}-%{version}-*.*-info
