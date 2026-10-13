@@ -2,7 +2,7 @@
 
 Name:		python-beniget
 Version:	0.5.0
-Release:	1
+Release:	2
 Summary:	Extract semantic information about static Python code
 Group:		Development/Python
 License:	BSD
@@ -11,7 +11,8 @@ Source0:	https://github.com/serge-sans-paille/beniget/archive/%{version}/%{modul
 BuildSystem:	python
 BuildArch:	noarch
 
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(gast)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
